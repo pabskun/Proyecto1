@@ -8,7 +8,23 @@ const serveStatic = require('serve-static');
 // Se exporta la conexión de nodejs
 const connect = require('connect');
 
+const nodemon = require('nodemon');
+
 // Se establece la conexion y el puerto en el que la aplicación va a correr
 connect().use(serveStatic(__dirname)).listen(port, () => {
   console.log('El servidor esta levantado dentro del puerto ' + port);
+});
+
+nodemon({
+  script: 'api/index.js',
+  ext: 'js'
+});
+
+nodemon.on('start', function () {
+  console.log('App has started');
+}).on('quit', function () {
+  console.log('App has quit');
+  process.exit();
+}).on('restart', function (files) {
+  console.log('App restarted due to: ', files);
 });

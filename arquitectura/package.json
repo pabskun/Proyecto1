@@ -4,8 +4,7 @@
   "description": "Arquitectura de proyecto software 1",
   "main": "api/index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon --watch src src/index.js"
+    "start": "node index.js"
   },
   "author": "Pabskun",
   "dependencies": {

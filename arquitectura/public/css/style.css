@@ -102,3 +102,22 @@ header nav a{
 }
 
 /* Estilos generales */
+
+table {
+    border-collapse: collapse;
+}
+
+th{
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+table, th, td {
+    border-bottom: 1px solid #ddd;
+    vertical-align: middle;
+    padding: 40px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}

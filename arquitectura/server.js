@@ -13,20 +13,8 @@ const nodemon = require('nodemon');
 // Se establece la conexion y el puerto en el que la aplicación va a correr
 connect().use(serveStatic(__dirname)).listen(port, () => {
   console.log('El servidor esta levantado dentro del puerto ' + port);
-});
-
-// Se establece cual va a ser el archivo que va a conectar nodemon
-nodemon({
-  script: 'api/index.js',
-  ext: 'js'
-});
-
-// Creamos la conexion del backend con Nodemon
-nodemon.on('start', () => {
-  console.log('La aplicación ha sido levantada correctamente');
-}).on('quit', () => {
-  console.log('App has quit');
-  process.exit();
-}).on('restart', (files) => {
-  console.log('App restarted due to: ', files);
+  nodemon({
+    script: 'api/index.js',
+    ext: 'js'
+  });
 });

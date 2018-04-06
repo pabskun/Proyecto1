@@ -30,11 +30,10 @@ function mostrarCarreras() {
         let colNombre = fila.insertCell();
         let colCorreo = fila.insertCell();
         let colTelefono = fila.insertCell();
-;
 
-        let sNombre = document.createTextNode(listaUsuarios[i][0]);
-        let sCorreo = document.createTextNode(listaUsuarios[i][1]);
-        let sTelefono = document.createTextNode(listaUsuarios[i][2]);
+        let sNombre = document.createTextNode(listaUsuarios[i]['nombre']);
+        let sCorreo = document.createTextNode(listaUsuarios[i]['correo']);
+        let sTelefono = document.createTextNode(listaUsuarios[i]['telefono']);
 
 
         colNombre.appendChild(sNombre);

@@ -6,7 +6,9 @@ function guardarUsuario(pDatosUsuario){
     dataType : 'json',
     async:false,
     data:{
-        'data' : pDatosUsuario
+        'nombre' : pDatosUsuario[0],
+        'correo' : pDatosUsuario[1],
+        'telefono' : pDatosUsuario[2]
     }
   });
   peticion.done(function(response){
@@ -32,7 +34,7 @@ function obtenerUsuarios(){
   peticion.done(function(datos){
 
     datos.forEach(dato => {
-      listaUsuarios.push(dato.data);
+      listaUsuarios.push(dato);
     });
 
     console.log('Petición realizada con éxito');

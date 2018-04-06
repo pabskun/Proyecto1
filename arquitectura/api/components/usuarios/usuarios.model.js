@@ -3,8 +3,11 @@ let mongoose = require('mongoose');
 
 //Esquema de usuarios
 let UserSchema = new mongoose.Schema({
-  data : Array
+  nombre : String,
+  correo : String,
+  telefono : String
 });
+
 
 //nombre del modelo dentro del back end y el userSchema es el nombre dentro de mongoose
 module.exports = mongoose.model('User', UserSchema); 

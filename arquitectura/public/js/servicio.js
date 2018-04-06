@@ -31,11 +31,11 @@ function obtenerUsuarios(){
    
     }
   });
-  peticion.done(function(datos){
+  peticion.done(function(usuarios){
 
-    datos.forEach(dato => {
-      listaUsuarios.push(dato);
-    });
+    for(let i = 0; i < usuarios.length; i++){
+      listaUsuarios.push(usuarios[i]);
+    }
 
     console.log('Petición realizada con éxito');
   });

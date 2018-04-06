@@ -1,6 +1,6 @@
 const UserModel = require('./usuarios.model');
 
-module.exports.registrar = (req, res) => {
+module.exports.registrar = function(req, res)  {
   console.log(req.body);
   let newUser = new UserModel({
     nombre: req.body.nombre,
@@ -8,7 +8,7 @@ module.exports.registrar = (req, res) => {
     telefono: req.body.telefono
   });
 
-  newUser.save((err) => {
+  newUser.save( function(err) {
     if (err) {
       res.json({ success: false, msg: 'Ha ocurrido un error en el registro de usuarios' + err });
     } else {
@@ -17,13 +17,13 @@ module.exports.registrar = (req, res) => {
   });
 };
 
-module.exports.listarTodos = (req, res) => {
+module.exports.listarTodos = function(req, res) {
   UserModel.find().then((user) => {
     res.send(user);
   });
 };
 
-module.exports.actualizar = (req, res) => {
+module.exports.actualizar = function(req, res) {
   UserModel.findByIdAndUpdate(req.body._id, { $set: req.body }, (err, user) => {
     if (err) {
       res.json({ success: false, msg: 'No se ha actualizado.' + handleError(err) });

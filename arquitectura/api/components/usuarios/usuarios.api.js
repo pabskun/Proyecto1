@@ -18,13 +18,13 @@ module.exports.registrar = function(req, res)  {
 };
 
 module.exports.listarTodos = function(req, res) {
-  UserModel.find().then((user) => {
+  UserModel.find().then(function(user) {
     res.send(user);
   });
 };
 
 module.exports.actualizar = function(req, res) {
-  UserModel.findByIdAndUpdate(req.body._id, { $set: req.body }, (err, user) => {
+  UserModel.findByIdAndUpdate(req.body._id, { $set: req.body }, function(err, user) {
     if (err) {
       res.json({ success: false, msg: 'No se ha actualizado.' + handleError(err) });
 

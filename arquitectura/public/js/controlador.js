@@ -1,7 +1,8 @@
 let botonEnviar = document.querySelector('#btnEnviar');
 
 botonEnviar.addEventListener('click', obtenerDatos);
-mostrarCarreras()
+mostrarCarreras();
+
 function obtenerDatos(){
     let inputNombre = document.querySelector('#txtNombre');
     let sNombre = inputNombre.value;
@@ -15,7 +16,7 @@ function obtenerDatos(){
     let arrDatos = [sNombre, sCorreo, sTelefono];
 
     guardarUsuario(arrDatos);
-    mostrarCarreras()
+    mostrarCarreras();
 }
 
 function mostrarCarreras() {

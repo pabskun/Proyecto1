@@ -1,13 +1,16 @@
-//Requerimos mongoose
+/**
+ * Se exporta Moongoose para guardar el modelo dentro del mismo y poder accesarlo despues
+ */
 let mongoose = require('mongoose');
 
-//Esquema de usuarios
+/**
+ * Se crea un esquema, los equemas son la arquitectura basica que van a tener los datos dentro de Mongo
+ */
 let UserSchema = new mongoose.Schema({
-  nombre : String,
-  correo : String,
-  telefono : String
+  nombre : {type: String, required : true},
+  correo : {type: String, required : true},
+  telefono : {type: String, required : true}
 });
-
 
 //nombre del modelo dentro del back end y el userSchema es el nombre dentro de mongoose
 module.exports = mongoose.model('User', UserSchema); 

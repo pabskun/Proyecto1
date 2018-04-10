@@ -1,9 +1,13 @@
+/**
+ * Exportamos las dependencias y el model
+ * se exporta express, y despues se inicializa un enrutamiento del mismo para poder exportarlo
+ */
 const express = require('express'),
       router = express.Router(),
       users = require('./usuarios.api');
 
 /**
- * 
+ * Establece cual va a ser el parametró único
  */
 router.param('id', function(req, res, next, id) {
   req.body.id = id;
@@ -34,4 +38,7 @@ router.route('/update_users')
     users.actualizar(req,res);
 });
 
+/**
+ * Se exporta todas las rutas para que sean interpretadas dentro del index.js
+ */
 module.exports = router;

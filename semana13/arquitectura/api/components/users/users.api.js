@@ -28,3 +28,22 @@ module.exports.listar_usuarios = function(req, res){
             res.send(usuarios);
         });
 };
+
+module.exports.buscar_usuario_por_id = function(req, res){
+    userModel.findById({_id:req.body.id}).then(
+        function(usuario){
+            res.send(usuario);
+        });
+};
+
+module.exports.actualizar_usuario = function(req, res){
+    userModel.findByIdAndUpdate(req.body._id, { $set: req.body }, 
+        function(err, user) {
+            if (err) {
+                res.json({ success: false, msg: 'No se ha actualizado.' + handleError(err) });
+        
+            } else {
+            res.json({ success: true, msg: 'Se ha actualizado correctamente.' + res });
+            }
+      });
+};

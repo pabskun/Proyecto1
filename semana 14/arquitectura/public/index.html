@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Página semántica</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/reset.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <div>
+                <i class="fa fa-leaf" aria-hidden="true"></i>
+                <span>Pabs Elementos</span>
+            </div>
+            <nav>
+                <a href="">Metales</a>
+                <a href="">No metales</a>
+                <a href="">Metaloides</a>
+                <a href="">Gases nobles</a>
+            </nav>
+        </header>
+
+        <main>
+            <section id="bannerPrincipal">
+                <h1>Elementos</h1>
+            </section>
+
+            <section id="contacto">
+                <form>
+                    <h2>Registo de usuarios</h2>
+                    <p>Registrese dentro del sitio de Pabs elementos para recibir información extra</p>
+                    <div>
+                        <label for="txtNombre">Nombre</label>
+                        <input type="text" id="txtNombre" placeholder="Pablo">
+                    </div>
+
+                    <div>
+                        <label for="txtCorreo">Correo</label>
+                        <input type="email" id="txtCorreo" placeholder="pablo@gmail.com">
+                    </div>
+
+                    <div>
+                        <label for="txtTelefono">Teléfono</label>
+                        <input type="tel" id="txtTelefono" placeholder="88889999">
+                    </div>
+                    <button type="button" id="btnEnviar"> 
+                        Registrarse
+                    </button>
+                    <button type="button" id="btnActualizar"> 
+                        Actualizar
+                    </button>
+
+                </form>
+                <div class="mapa">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1965.0081208779877!2d-84.0326031!3d9.932605!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2scr!4v1517327237718"
+                        width="800" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <table id="tblPersonas">
+                <thead>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Teléfono</th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </main>
+
+
+        <footer>
+
+
+        </footer>
+        <script src="https://use.fontawesome.com/7a2826d8c5.js"></script>
+        <script
+        src="./vendor/jquery-3.3.1.min.js"></script>
+        
+        <script src="js/servicio.js"></script>
+        <script src="js/controlador.js"></script>
+    </body>
+</html>
